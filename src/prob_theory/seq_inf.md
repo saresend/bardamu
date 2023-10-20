@@ -13,14 +13,14 @@ at their surface look like the normal infinity we're used to. Instead, it means
 
 By Axiom, probabilities can at most be 1. So, rather than looking at individual events, we want to look at sequences. What we want to do is analyze the probabilities of infinite *sequences* of events. 
 
-A simple example to think about for the following segment is the probability of flipping some number of heads in a row: 
+A simple example to think about for the following segment is the probability of flipping some number of heads in a row (with a random variable being an indicator of whether that event happened: 
 
 \\[
-    X_i = \mathbb{P}(\text{i heads consecutively}) = \frac{1}{2}^i
+    X_i(P = 1) = \mathbb{P}(\text{i heads consecutively}) = \frac{1}{2}^i
 \\]
 
-So, now imagine that we flip an infinite number of coins. Now, we can start asking questions about how many different events corresponding to different \\(X_i\\) we might expect to encounter. Notably, could we see infinite different events?
-To answer this, we introduce the following theorem, called the Borel-Cantelli lemma, which defines behavior for certain types of sequences
+So, now imagine that we flip an infinite number of coins. Now, we can start asking questions about how many different events corresponding to different \\(X_i\\) we might expect to encounter. Notably, could we see infinite different \\(X_i\\) succeed?
+To answer this, we introduce the following theorem, called the Borel-Cantelli lemma, which describes the behavior for infinite sequences.
 
 \\[
   \boxed{
@@ -30,6 +30,8 @@ To answer this, we introduce the following theorem, called the Borel-Cantelli le
   \end{align}
   }
 \\]
+
+It is important to note - we don't care if the events are independent or not. Why we don't care, largely has to do with Boole's inequality. Specifically, independent or not, the union of all these events cannot succeed with higher probability than their sums. Since either way we are finite, it does not matter what relation our events have. 
 
 
 
