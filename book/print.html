@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">2.</strong> Probability Theory</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">3.</strong> Game Theory</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">2.</strong> Probability Theory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="prob_theory/seq_inf.html"><strong aria-hidden="true">2.1.</strong> Infinities in Probability</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">3.</strong> Game Theory</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -178,6 +178,25 @@
 <p>Hi, I'm Sam! This work contains summaries mostly for myself on a number of different math and programming computer science topics. </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-1"><a class="header" href="#introduction-1">Introduction</a></h1>
 <p>Hi, I'm Sam! This work contains summaries mostly for myself on a number of different math and programming computer science topics. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="infinities"><a class="header" href="#infinities">Infinities</a></h1>
+<p align="center">
+  <img src="https://imgs.xkcd.com/comics/seashell.png" />
+</p>
+<p>A lot of the interesting results in probability theory describe
+the behavior at infinities. However, the infinities described don't 
+at their surface look like the normal infinity we're used to. Instead, it means</p>
+<h2 id="what-does-it-mean-for-something-to-be-infinitely-probable"><a class="header" href="#what-does-it-mean-for-something-to-be-infinitely-probable">What does it mean for something to be &quot;infinitely probable&quot;</a></h2>
+<p>By Axiom, probabilities can at most be 1. So, rather than looking at individual events, we want to look at sequences. Informally, what we want to do is analyze the probabilities of infinite <em>sequences</em> of events. </p>
+<p>A simple example to think about for the following segment is the probability of flipping some number of heads in a row: </p>
+<p>\[
+X_i = \mathbb{P}(\text{i heads consecutively}) = \frac{1}{2}^i
+\]</p>
+<p>So, now imagine that we flip an infinite number of coins. Now, we can start asking questions about how many different events corresponding to different \(X_i\) we might expect to encounter. Notably, could we see infinite different events?
+To answer this, we introduce the following theorem, called the Borel-Cantelli lemma, which defines behavior for certain types ofsequences</p>
+<p>\[
+\boxed{\text{Borel Cantelli Lemma (Finite flavor):}}
+\]</p>
+<h2 id="interpreting-limit-superior--inferior-for-random-variables"><a class="header" href="#interpreting-limit-superior--inferior-for-random-variables">Interpreting limit superior / inferior for Random Variables</a></h2>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-2"><a class="header" href="#introduction-2">Introduction</a></h1>
 <p>Hi, I'm Sam! This work contains summaries mostly for myself on a number of different math and programming computer science topics. </p>
 
