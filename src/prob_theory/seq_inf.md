@@ -1,42 +1,18 @@
-#  Infinities
+#  Infinities in Probability
 
-<p align="center">
-  <img src="https://imgs.xkcd.com/comics/seashell.png" />
-</p>
-
-A lot of the interesting results in probability theory describe
-the behavior at infinities. However, the infinities described don't 
-at their surface look like the normal infinity we're used to. Instead, it means
-
-
-## What does it mean for something to be "infinitely probable"
-
-By Axiom, probabilities can at most be 1. So, rather than looking at individual events, we want to look at sequences. What we want to do is analyze the probabilities of infinite *sequences* of events. 
-
-A simple example to think about for the following segment is the probability of flipping some number of heads in a row (with a random variable being an indicator of whether that event happened: 
-
-\\[
-    X_i(P = 1) = \mathbb{P}(\text{i heads consecutively}) = \frac{1}{2}^i
-\\]
-
-So, now imagine that we flip an infinite number of coins. Now, we can start asking questions about how many different events corresponding to different \\(X_i\\) we might expect to encounter. Notably, could we see infinite different \\(X_i\\) succeed?
-To answer this, we introduce the following theorem, called the Borel-Cantelli lemma, which describes the behavior for infinite sequences.
+In this note I want to try to explain in a bit more of an intuitive sense, what the following theorem means: 
 
 \\[
   \boxed{
   \begin{align}
-    \text{Borel Cantelli Lemma (Finite flavor):}  \newline \newline
+    \text{Borel Cantelli Lemma :}  \newline \newline
     \text{if} \sum_i^\infty \mathbb{P}(E_i) < \infty \rightarrow \mathbb{P}(\limsup E_i) = 0
   \end{align}
   }
 \\]
 
-It is important to note - we don't care if the events are independent or not. Why we don't care, largely has to do with Boole's inequality. Specifically, independent or not, the union of all these events cannot succeed with higher probability than their sums. Since either way we are finite, it does not matter what relation our events have. 
 
-
-
-
-## Interpreting limit superior / inferior for Random Variables
+In english, what this theorem says is that for any sequence of events where the sum of their probabilities is finite, the probability of \\(\limsup E_i\\) must also be zero. To properly explain what that means, we should first explain some elementary but important concepts: 
 
 
 
