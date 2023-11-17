@@ -5,3 +5,6 @@
 - [Probability Theory](./chapter_1.md)
    - [Infinities in Probability](./prob_theory/seq_inf.md)
 - [Game Theory](./chapter_1.md)
+- [CS Theory Math](./cs_theo/summary.md)
+   - [Matroid Theory](./cs_theo/matroids.md)
+   - [Random Vector Generation](./cs_theo/rvg.md)
