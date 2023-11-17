@@ -10,9 +10,16 @@ We consider this field taken over some dimension m to be our "source" vector spa
 
 \\[ \mathcal{R} \in X^{d * m}, \phi(\sigma) = \mathcal{R}\sigma  \\]
 
-## Result 1: A set of k-wise linearly independent can be mapped to k-wise independent vectors using \\(\mathcal{R}\\) 
+## Result 1: A set of k-wise linearly independent vectors can be used to generate to k-wise independent vectors using \\(\mathcal{R}\\) that span our image space
 
 ### Proof: TODO
 
-
 An interesting immediate corollary of this is that representable matroids in \\( \mathbb{F}_q^b \\) are actually preserved with respect to stochastic independence 
+
+## Result 2: As the dimension of our image space grows with respect to m, the probability of our random linear map being an embedding increases.
+
+In particular, we get the following relation :
+
+\\[ Pr[\textbf{Rank}(\mathcal{R})] \geq 1 - \frac{1}{q^{d - m}} \\]
+
+### Proof: TODO
