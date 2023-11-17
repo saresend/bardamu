@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">2.</strong> Probability Theory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="prob_theory/seq_inf.html"><strong aria-hidden="true">2.1.</strong> Infinities in Probability</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">3.</strong> Game Theory</a></li><li class="chapter-item expanded "><a href="cs_theo/summary.html"><strong aria-hidden="true">4.</strong> CS Theory Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cs_theo/matroids.html"><strong aria-hidden="true">4.1.</strong> Matroid Theory</a></li><li class="chapter-item expanded "><a href="cs_theo/rvg.html"><strong aria-hidden="true">4.2.</strong> Random Vector Generation</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">2.</strong> Probability Theory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="prob_theory/seq_inf.html"><strong aria-hidden="true">2.1.</strong> Infinities in Probability</a></li><li class="chapter-item expanded "><a href="prob_theory/martin.html"><strong aria-hidden="true">2.2.</strong> Martingales</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">3.</strong> Game Theory</a></li><li class="chapter-item expanded "><a href="cs_theo/summary.html"><strong aria-hidden="true">4.</strong> CS Theory Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cs_theo/matroids.html"><strong aria-hidden="true">4.1.</strong> Matroid Theory</a></li><li class="chapter-item expanded "><a href="cs_theo/rvg.html"><strong aria-hidden="true">4.2.</strong> Random Vector Generation</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -189,6 +189,16 @@
 }
 \]</p>
 <p>In english, what this theorem says is that for any sequence of events where the sum of their probabilities is finite, the probability of \(\limsup E_i\) must also be zero. To properly explain what that means, we should first explain some elementary but important concepts: </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="martingales"><a class="header" href="#martingales">Martingales</a></h1>
+<p>In contrast to a lot of conventional probability theory, which takes independence as a &quot;shield&quot; against a lot of complex behavior to obtain results such as the strong law of large numbers and central limit theorems, Martingales, and more generally stochastic processes, are results obtained when we start relaxing assumptions about the independence of a series of random variables. </p>
+<p>This is motivated by the fact that a huge number of natural processes can be modeled via stochastic random processes, with varying assumptions made about the dependence of the change from one time to another in this process. </p>
+<h2 id="filtrations"><a class="header" href="#filtrations">Filtrations</a></h2>
+<p>Before defining what a martingale is, its helpful to start by explaining what a filtration means in the context of probability. Formally, a filtration is a sequence \(\mathcal{F}^n\) 
+of \(\sigma\)-algebras, that adhere to the property that \( \mathcal{F}^i \subseteq \mathcal{F}^{i+1} \)</p>
+<p>Why would we be interested in such a sequence? To motivate this definition, imagine some sequence of random variables which we observe sequentially. Say for example we are trying to understand a random walk, where at each step we step right or left a value of 1. Clearly, our position at some time t depends on the position that we were at previously, so the induced random variable (say its \(S_n\)), is not independent across time quanta. Before we get to analyzing these random variables, we need to define some algebra that it is measurable against. This is a filtration.</p>
+<p>Now let's consider the \(\sigma\)-algebras induced by each \(S_n\). At a given time step, range of values of \(S_n\) induce a more &quot;fine grained&quot; sigma algebra than we had before. </p>
+<h2 id="what-is-a-martingales"><a class="header" href="#what-is-a-martingales">What is a martingales</a></h2>
+<p>A martingale is a sequence of random variables that adhere to the</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-2"><a class="header" href="#introduction-2">Introduction</a></h1>
 <p>Hi, I'm Sam! This work contains summaries mostly for myself on a number of different math and programming computer science topics. </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cs-theory-math"><a class="header" href="#cs-theory-math">CS Theory Math</a></h1>
@@ -199,12 +209,13 @@
 <p>We consider this field taken over some dimension m to be our &quot;source&quot; vector space, from which we can take vectors that satisfy properties, predominantly linear independence, and use this to produce stochastic independence in other vector spaces. In particular, consider the following, with X denoting a uniform distribution over {0....q-1}:</p>
 <p>\[ \mathcal{R} \in X^{d * m}, \phi(\sigma) = \mathcal{R}\sigma  \]</p>
 <h2 id="result-1-a-set-of-k-wise-linearly-independent-vectors-can-be-used-to-generate-to-k-wise-independent-vectors-using-mathcalr-that-span-our-image-space"><a class="header" href="#result-1-a-set-of-k-wise-linearly-independent-vectors-can-be-used-to-generate-to-k-wise-independent-vectors-using-mathcalr-that-span-our-image-space">Result 1: A set of k-wise linearly independent vectors can be used to generate to k-wise independent vectors using \(\mathcal{R}\) that span our image space</a></h2>
-<h3 id="proof-todo"><a class="header" href="#proof-todo">Proof: TODO</a></h3>
+<h3 id="proof"><a class="header" href="#proof">Proof</a></h3>
+<p>First, let's consider the </p>
 <p>An interesting immediate corollary of this is that representable matroids in \( \mathbb{F}_q^b \) are actually preserved with respect to stochastic independence </p>
 <h2 id="result-2-as-the-dimension-of-our-image-space-grows-with-respect-to-m-the-probability-of-our-random-linear-map-being-an-embedding-increases"><a class="header" href="#result-2-as-the-dimension-of-our-image-space-grows-with-respect-to-m-the-probability-of-our-random-linear-map-being-an-embedding-increases">Result 2: As the dimension of our image space grows with respect to m, the probability of our random linear map being an embedding increases.</a></h2>
 <p>In particular, we get the following relation :</p>
 <p>\[ Pr[\textbf{Rank}(\mathcal{R})] \geq 1 - \frac{1}{q^{d - m}} \]</p>
-<h3 id="proof-todo-1"><a class="header" href="#proof-todo-1">Proof: TODO</a></h3>
+<h3 id="proof-todo"><a class="header" href="#proof-todo">Proof: TODO</a></h3>
 
                     </main>
 

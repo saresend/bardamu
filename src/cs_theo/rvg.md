@@ -12,7 +12,9 @@ We consider this field taken over some dimension m to be our "source" vector spa
 
 ## Result 1: A set of k-wise linearly independent vectors can be used to generate to k-wise independent vectors using \\(\mathcal{R}\\) that span our image space
 
-### Proof: TODO
+### Proof
+
+First, let's consider the 
 
 An interesting immediate corollary of this is that representable matroids in \\( \mathbb{F}_q^b \\) are actually preserved with respect to stochastic independence 
 
