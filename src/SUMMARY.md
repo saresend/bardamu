@@ -8,3 +8,4 @@
 - [CS Theory Math](./cs_theo/summary.md)
    - [Matroid Theory](./cs_theo/matroids.md)
    - [Random Vector Generation](./cs_theo/rvg.md)
+   - [Matroid BOSP Algorithm](./cs_theo/weinberg_bosp.md)

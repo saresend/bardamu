@@ -19,8 +19,8 @@ Currently, the best known general form algorith is $O(\frac{1}{\log \log r})$, w
 For certain types of matroids 
 
 
-
 ## Ideas (maybe) worth exploring
 
 - Memory Augmentation: Does relaxing the problem so that we can choose either the current or previous element improve our ability to do well w.r.t to some matroid? 
+- Structure Randomizing: Maybe there is interesting theory if we assume a randomized structure for matroids? 
 

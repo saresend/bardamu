@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction</title>
+        <title>Matroid BOSP Algorithm</title>
 
 
         <!-- Custom HTML head -->
@@ -12,21 +12,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,7 +35,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html" class="active"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">2.</strong> Probability Theory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="prob_theory/seq_inf.html"><strong aria-hidden="true">2.1.</strong> Infinities in Probability</a></li><li class="chapter-item expanded "><a href="prob_theory/martin.html"><strong aria-hidden="true">2.2.</strong> Martingales</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">3.</strong> Game Theory</a></li><li class="chapter-item expanded "><a href="cs_theo/summary.html"><strong aria-hidden="true">4.</strong> CS Theory Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cs_theo/matroids.html"><strong aria-hidden="true">4.1.</strong> Matroid Theory</a></li><li class="chapter-item expanded "><a href="cs_theo/rvg.html"><strong aria-hidden="true">4.2.</strong> Random Vector Generation</a></li><li class="chapter-item expanded "><a href="cs_theo/weinberg_bosp.html"><strong aria-hidden="true">4.3.</strong> Matroid BOSP Algorithm</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../chapter_1.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../chapter_1.html"><strong aria-hidden="true">2.</strong> Probability Theory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../prob_theory/seq_inf.html"><strong aria-hidden="true">2.1.</strong> Infinities in Probability</a></li><li class="chapter-item expanded "><a href="../prob_theory/martin.html"><strong aria-hidden="true">2.2.</strong> Martingales</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter_1.html"><strong aria-hidden="true">3.</strong> Game Theory</a></li><li class="chapter-item expanded "><a href="../cs_theo/summary.html"><strong aria-hidden="true">4.</strong> CS Theory Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cs_theo/matroids.html"><strong aria-hidden="true">4.1.</strong> Matroid Theory</a></li><li class="chapter-item expanded "><a href="../cs_theo/rvg.html"><strong aria-hidden="true">4.2.</strong> Random Vector Generation</a></li><li class="chapter-item expanded "><a href="../cs_theo/weinberg_bosp.html" class="active"><strong aria-hidden="true">4.3.</strong> Matroid BOSP Algorithm</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,7 +142,7 @@
                     <h1 class="menu-title"></h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
 
@@ -172,17 +172,26 @@
                 <div id="content" class="content">
                     <main>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<p>Hi, I'm Sam! This work contains summaries mostly for myself on a number of different math and programming computer science topics. </p>
+<h1 id="matroid-bosp-algorithm"><a class="header" href="#matroid-bosp-algorithm">Matroid BOSP Algorithm</a></h1>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<p>The initial exploration of prophet inequalities began with a simple, classical formulation of the problem. The problem is summarized as the following - imagine yourself a gambler, and you are given the following proposition - we will draw randomly from some sequence of distributions, call these <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span></span></span></span>, and reveal them to you one at a time. You are then given the choice to either &quot;cash out&quot;, and select the value of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> you are given, or, you can decline and keep playing with the hope of drawing a better lot later on. </p>
+<p>Once you've made your choice, you are weighed against a &quot;prophet&quot;, someone who knows what all the eventual values are, and who picks the best possible option from those. Analyzing this problem by imagining yourself in competition with this prophet gives name to the topic of study.</p>
+<h2 id="mathematic-formulation"><a class="header" href="#mathematic-formulation">Mathematic formulation</a></h2>
+<p>Let's introduce the following notation and assumptions to clarify a rather simple, but instructive instance of the above. We consider a sequence of distributions <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span></span></span></span>, that are assumed to be independent. We can also define <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span></span></span></span> to be the order in which the realizations of each distribution are shown (and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span></span></span></span> may itself be random). </p>
+<p>Further, we are measured against the following: for any choice <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span> that we select, it is compared against the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbb">E</span><span class="mopen">[</span><span class="mop"><span class="mop">max</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span>. Said another way, we should think we are playing against the expectation of the prophet. </p>
+<h2 id="2-approximation-for-the-simplest-case"><a class="header" href="#2-approximation-for-the-simplest-case">2 approximation for the simplest case</a></h2>
+<h2 id="generalizations"><a class="header" href="#generalizations">Generalizations</a></h2>
+<p>From the classic formulation, there already arise a lot of possible avenues to expand on this work. In general, we can explore what happens if we relax the assumption that <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span></span></span></span> is mutually independent, or we can expand our selection to be more than a single element. We will explore the second generalization in the remainder of this note, with respect to some matroid constraints. </p>
+<h2 id="relation-to-the-classical-secretary-problem"><a class="header" href="#relation-to-the-classical-secretary-problem">Relation to the classical secretary problem</a></h2>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-
-                            <a rel="next prefetch" href="chapter_1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                            <a rel="prev" href="../cs_theo/rvg.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
                             </a>
+
 
                         <div style="clear: both"></div>
                     </nav>
@@ -190,10 +199,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-
-                    <a rel="next prefetch" href="chapter_1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                    <a rel="prev" href="../cs_theo/rvg.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
                     </a>
+
             </nav>
 
         </div>
@@ -222,13 +231,13 @@
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 
