@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">2.</strong> Probability Theory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="prob_theory/seq_inf.html"><strong aria-hidden="true">2.1.</strong> Infinities in Probability</a></li><li class="chapter-item expanded "><a href="prob_theory/martin.html"><strong aria-hidden="true">2.2.</strong> Martingales</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">3.</strong> Game Theory</a></li><li class="chapter-item expanded "><a href="cs_theo/summary.html"><strong aria-hidden="true">4.</strong> CS Theory Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cs_theo/matroids.html"><strong aria-hidden="true">4.1.</strong> Matroid Theory</a></li><li class="chapter-item expanded "><a href="cs_theo/rvg.html"><strong aria-hidden="true">4.2.</strong> Random Vector Generation</a></li><li class="chapter-item expanded "><a href="cs_theo/weinberg_bosp.html"><strong aria-hidden="true">4.3.</strong> Matroid BOSP Algorithm</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">2.</strong> Probability Theory</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="prob_theory/seq_inf.html"><strong aria-hidden="true">2.1.</strong> Infinities in Probability</a></li><li class="chapter-item expanded "><a href="prob_theory/martin.html"><strong aria-hidden="true">2.2.</strong> Martingales</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">3.</strong> Game Theory</a></li><li class="chapter-item expanded "><a href="cs_theo/summary.html"><strong aria-hidden="true">4.</strong> CS Theory Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cs_theo/matroids.html"><strong aria-hidden="true">4.1.</strong> Matroid Theory</a></li><li class="chapter-item expanded "><a href="cs_theo/rvg.html"><strong aria-hidden="true">4.2.</strong> Random Vector Generation</a></li><li class="chapter-item expanded "><a href="cs_theo/weinberg_bosp.html"><strong aria-hidden="true">4.3.</strong> Matroid BOSP Algorithm</a></li><li class="chapter-item expanded "><a href="cs_theo/crs.html"><strong aria-hidden="true">4.4.</strong> Contention Resolution Schemes</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -243,6 +243,22 @@ Let's consider the probability that we map each vector <span class="katex"><span
 <h2 id="generalizations"><a class="header" href="#generalizations">Generalizations</a></h2>
 <p>From the classic formulation, there already arise a lot of possible avenues to expand on this work. In general, we can explore what happens if we relax the assumption that <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span></span></span></span> is mutually independent, or we can expand our selection to be more than a single element. We will explore the second generalization in the remainder of this note, with respect to some matroid constraints. </p>
 <h2 id="relation-to-the-classical-secretary-problem"><a class="header" href="#relation-to-the-classical-secretary-problem">Relation to the classical secretary problem</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="contention-resolution-schemes"><a class="header" href="#contention-resolution-schemes">Contention Resolution Schemes</a></h1>
+<h2 id="introduction-5"><a class="header" href="#introduction-5">Introduction</a></h2>
+<p>There are broad categories of problems that fall under the same, rather general format. These are problems that can be framed in the following fashion. You are given a ground set <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span>, and some submodular function <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span>, which we are trying to optimize subject some set of constraints on the allowed items we can select. In general, this describes a lot of interesting NP-hard problems. </p>
+<h3 id="maximum-coverage-problem"><a class="header" href="#maximum-coverage-problem">Maximum Coverage Problem</a></h3>
+<p>One example is the MCP problem - the problem is just about the simplest possible optimization of this form, and yet its still NP-hard. The problems asks for the following: given N different sets, pick <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> of them such that the cardinality of their union is maximized. There are known approximations of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>, but in its exact form this is NP-hard. This is, essentially, the decision variant of the set cover problem. We could produce a minimum set cover algorithm that is comprised of calls to MCP, given some binary search structure. </p>
+<h3 id="online-contexts"><a class="header" href="#online-contexts">Online contexts</a></h3>
+<p>Historically, problems of the above form are considered in an offline context. This would mean that we are given all of the values of the elements up front, and it is up to us to find the maximal set of these elements. If we are able to compute the total structure of the set of constraints (i.e. the matroid, knapsack, or other constraint set), then this would be rather trivial. However, the fundamental challenge is that we must enumerate our search space, which in general may well be too expensive. </p>
+<h2 id="problems"><a class="header" href="#problems">Problems.</a></h2>
+<ol>
+<li>Show that <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is convex</li>
+</ol>
+<h2 id="open-questions"><a class="header" href="#open-questions">Open questions</a></h2>
+<ol>
+<li>Does order agnosticism provide advantage in more general cases? </li>
+</ol>
 
                     </main>
 
@@ -261,6 +277,22 @@ Let's consider the probability that we map each vector <span class="katex"><span
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

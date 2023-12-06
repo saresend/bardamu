@@ -9,3 +9,4 @@
    - [Matroid Theory](./cs_theo/matroids.md)
    - [Random Vector Generation](./cs_theo/rvg.md)
    - [Matroid BOSP Algorithm](./cs_theo/weinberg_bosp.md)
+   - [Contention Resolution Schemes](./cs_theo/crs.md)

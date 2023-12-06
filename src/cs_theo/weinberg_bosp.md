@@ -16,6 +16,7 @@ Further, we are measured against the following: for any choice $A$ that we selec
 
 
 
+
 ## Generalizations 
 
 From the classic formulation, there already arise a lot of possible avenues to expand on this work. In general, we can explore what happens if we relax the assumption that $\mathcal{w}$ is mutually independent, or we can expand our selection to be more than a single element. We will explore the second generalization in the remainder of this note, with respect to some matroid constraints. 
